@@ -1,0 +1,147 @@
+body {
+  background: #b5daff;
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 0 24px 0;
+  background: #e100ff;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.622);
+  border-radius: 0 0 8px 8px;
+}
+
+.main-title-heading {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #50004e;
+  margin: 0 0 18px 0;
+  letter-spacing: 1px;
+} 
+
+#pages-dropdown {
+  width: 180px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #c9c9c9;
+  font-size: 1rem;
+  background: #f8f9fa;
+  transition: border 0.2s;
+  margin-bottom: 0;
+}
+
+#pages-dropdown:focus {
+  border-color: #4f8cff;
+  outline: none;
+}
+
+.groups-list-container {
+  max-width: 98%;
+  margin: 10px auto;
+  padding: 10px 24px;
+  background: #7dbeff00;
+  border-radius: 16px;
+}
+
+.groups-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.breaker {
+  border: none;
+  border-top: 1px solid rgba(3, 1, 120, 0.248);
+  margin: 5px 0;
+  height: 0;
+  background: none;
+  padding-bottom: 10px;
+}
+
+.group-item {
+  padding: 14px 16px;
+  margin-bottom: 12px;
+  background: #29b8ff;
+  border-radius: 8px;
+  font-size: 1.5rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  user-select: none;
+  color: #4c4c7f;
+  box-shadow: 0 1px 4px rgba(79,140,255,0.05);
+  transition: background 0.2s;
+}
+
+.group-item:last-child {
+  margin-bottom: 0;
+}
+
+.group-item:hover {
+  background: #29b8ff9e;
+}
+
+.group-item:active {
+  background: #73d0ff9e;
+}
+
+.nav-bar {
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.nav-link {
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  color: #4a004d;
+  padding: 8px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  background: #9e00a1;
+  color: #4a004d;
+  font-weight: 600;
+}
+
+.plus-container {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 56px;
+  height: 56px;
+  background: #ffffff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(33, 150, 243, 0.18);
+  cursor: pointer;
+  z-index: 100;
+}
+
+.plus-container img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  pointer-events: auto;
+  -webkit-user-drag: none;
+}
+
+.plus-container:hover {
+  background: #cecece;
+}
+
+.plus-container:active {
+  background: black;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+}

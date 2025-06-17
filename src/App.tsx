@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Groups from "./pages/groups";
 import Totals from "./pages/totals";
+import './styles/App.css';
 
 
 function App() {
@@ -11,17 +12,22 @@ function App() {
     <>
         <header className="header">
                 <h1 className="main-title-heading">GoSplit</h1>
-                <select
-                    id="pages-dropdown"
-                    value={page}
-                    onChange={(e) => setPage(e.target.value==="" ? page : e.target.value)}
-                >
-                  <option value="">--choose--</option>
-                  <option value="groups">Groups</option>
-                  <option value="totals">Totals</option>
-                </select>
+                <nav className="nav-bar">
+                  <button
+                    className={`nav-link${page === "groups" ? " active" : ""}`}
+                    onClick={() => setPage("groups")}
+                  >
+                    Groups
+                  </button>
+                  <button
+                    className={`nav-link${page === "totals" ? " active" : ""}`}
+                    onClick={() => setPage("totals")}
+                  >
+                    Totals
+                  </button>
+                </nav>
         </header>
-        {page === "groups" && (<Groups a = {page}/>)}
+        {page === "groups" && (<Groups/>)}
         {page === "totals" && (<Totals a = {page}/>)}
     </>
   )
