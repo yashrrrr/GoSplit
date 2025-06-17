@@ -1,4 +1,4 @@
-export const Group = (prop) => {
+export const Group = () => {
     return (
         <>
             <ul>
