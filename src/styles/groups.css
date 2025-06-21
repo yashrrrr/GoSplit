@@ -40,6 +40,9 @@
 }
 
 .group-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 14px 16px;
   margin-bottom: 12px;
   background: #f1f3f8;
@@ -52,4 +55,12 @@
 
 .group-item:hover {
   background: #e0e7ff;
+}
+
+.group-item img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  margin-left: 12px;
+  cursor: pointer;
 }

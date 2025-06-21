@@ -16,6 +16,7 @@ export default function AddgroupForm({ Close, groupProp, setGroupProp }: AddGrou
         setGroupProp([
             ...groupProp,
             {
+                g_id: Date.now().toString(),
                 g_name: gName,
                 friends: selectedFriends,
             }

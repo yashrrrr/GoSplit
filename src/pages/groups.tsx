@@ -4,24 +4,30 @@ import '../styles/App.css';
 import { Group } from "./group";
 import plus_add_grp from '../assets/plus_add_grp.png';
 import AddgroupForm from "../components/AddGroupForm";
+import cross from "../assets/cross.png";
 
 
 export default function Groups() {
+    const [showGroup, setShowGroup] = useState<boolean>(false);
+    const [showPlus, setShowPlus] = useState<boolean>(true);
+    const [showForm, setShowform] = useState<boolean>(false);
     const [groups, setGroups] = useState<groups[]>(() => {
         if(localStorage.getItem('groups')){
         const stored = localStorage.getItem('groups');
         return stored ? JSON.parse(stored) as groups[] : [];
         } else {
             return [
-            { g_name: "Group 1", friends: ["bob"] },
-            { g_name: "Group 2", friends: ["bob"]  },
-            { g_name: "Group 3", friends: ["bob"]  },
+            { g_id: "1", g_name: "Group 1", friends: ["bob"] },
+            { g_id: "2", g_name: "Group 2", friends: ["bob"]  },
+            { g_id: "3", g_name: "Group 3", friends: ["bob"]  },
         ];
         }
     });
-    const [showGroup, setShowGroup] = useState<boolean>(false);
-    const [showPlus, setShowPlus] = useState<boolean>(true);
-    const [showForm, setShowform] = useState<boolean>(false);
+
+    const deleteGrp = (gid:string) => {
+            setGroups(groups.filter((group)=> group.g_id!==gid));
+    };
+    
 
     // Listen for mouseup on the whole window
     useEffect(() => {
@@ -52,7 +58,14 @@ export default function Groups() {
                         {groups?.map((group, idx) => (
                             <React.Fragment key={group.g_name + idx}>
                             <li className="group-item" onClick={() => setShowGroup(true)}>
-                                <p> {group.g_name} </p>
+                                <p>{group.g_name}</p>
+                                <img
+                                    src={cross}
+                                    onClick={e => {
+                                        e.stopPropagation();
+                                        deleteGrp(group.g_id);
+                                    }}
+                                />
                             </li>
                             </React.Fragment>
                         ))}
