@@ -1,0 +1,85 @@
+.friends-dropdown-container {
+  width: 100%;
+  max-width: 340px;
+  border: 1px solid #c9c9c9;   /* changed from 2px solid #111 */
+  border-radius: 8px;
+  background: #fff;
+  position: relative;
+  font-family: inherit;
+  margin-bottom: 18px;
+}
+
+.friends-dropdown-header {
+  padding: 8px 12px;
+  font-size: 1.1rem;         /* Match label font size */
+  font-weight: 400;          /* Match label font weight (normal) */
+  color: #22223b;            /* Match label color */
+  border-bottom: 1px solid #c9c9c9;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+}
+
+.dropdown-arrow {
+  font-size: 1.5rem;
+  margin-left: 8px;
+  display: flex;
+  align-items: center;
+  line-height: 1;
+  height: 100%;
+}
+
+.dropdown-arrow-img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.friends-dropdown-list {
+  max-height: 120px;
+  overflow-y: auto;
+  border-right: 1px solid #c9c9c9;   /* changed */
+  border-left: 1px solid #c9c9c9;    /* changed */
+  border-bottom: 1px solid #c9c9c9;  /* changed */
+  background: #fff;
+}
+
+.friends-dropdown-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.friends-dropdown-option.selected {
+  background: none;
+}
+
+.friends-dropdown-option:hover {
+  background: #e6f2ff;
+}
+
+.friends-dropdown-option input[type="checkbox"] {
+  accent-color: #2196f3;
+}
+
+.friends-dropdown-save {
+  margin: 16px auto 8px auto;
+  display: block;
+  padding: 8px 32px;
+  border: 1.5px solid #c9c9c9;   /* changed */
+  background: #fff;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.friends-dropdown-save:hover {
+  background: #e6f2ff;
+}

@@ -125,6 +125,16 @@ body {
   box-shadow: 0 4px 16px rgba(33, 150, 243, 0.18);
   cursor: pointer;
   z-index: 100;
+  transition:
+    background 0.15s,
+    border-radius 0.15s,
+    transform 0.15s cubic-bezier(.4,2,.6,1);
+}
+
+.plus-container:active {
+  background: black;
+  border-radius: 50%;
+  transform: scale(0.2857); /* 16/56 ≈ 0.2857 */
 }
 
 .plus-container img {
@@ -133,15 +143,11 @@ body {
   object-fit: contain;
   pointer-events: auto;
   -webkit-user-drag: none;
+  transition: width 0.15s, height 0.15s, opacity 0.1s;
 }
 
-.plus-container:hover {
-  background: #cecece;
-}
-
-.plus-container:active {
-  background: black;
-  border-radius: 50%;
-  width: 16px;
-  height: 16px;
+.plus-container:active img {
+  width: 0;
+  height: 0;
+  opacity: 0;
 }
