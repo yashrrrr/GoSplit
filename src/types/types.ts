@@ -6,6 +6,7 @@ export interface groups {
 
 export interface groupProp {
     gid: string;
+    setShowGrp: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export interface AddGroupFormProps {

@@ -7,14 +7,16 @@ export default function AddgroupForm({ Close, groupProp, setGroupProp }: AddGrou
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
         e.preventDefault();
-        setGroupProp([
+        const grpp = [
             ...groupProp,
             {
                 g_id: Date.now().toString(),
                 g_name: gName,
                 friends: selectedFriends,
             }
-        ]);
+        ];
+        setGroupProp(grpp);
+        localStorage.setItem('groups', JSON.stringify(grpp));
         Close();
     };
     const [friends, setFriends] = useState<string[]>([]);

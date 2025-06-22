@@ -88,7 +88,7 @@ export default function Groups() {
             )}
 
             {showGroup && (
-                <Group gid = {currGrpId} />
+                <Group gid = {currGrpId} setShowGrp = {setShowGroup}/>
             )}
         </>
     );
