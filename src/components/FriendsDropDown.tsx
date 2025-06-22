@@ -1,12 +1,7 @@
 import { useState, useRef } from "react";
 import "./FriendsDropDown.css";
 import dropDownArrow from "../assets/drop-down-arrow.png"; // <-- import the image
-
-interface FriendsDropDownProps {
-  options: string[];
-  selected: string[];
-  setSelected: (selected: string[]) => void;
-}
+import type { FriendsDropDownProps } from "../types/types";
 
 export default function FriendsDropDown({
   options,

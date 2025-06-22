@@ -1,13 +1,7 @@
 import { useEffect, useState } from 'react';
 import '../styles/GroupAddForm.css';
 import FriendsDropDown from "./FriendsDropDown";
-import type { groups } from '../types/types';
-
-interface AddGroupFormProps {
-    Close: () => void;
-    groupProp: groups[];
-    setGroupProp: React.Dispatch<React.SetStateAction<groups[]>>;
-}
+import type { AddGroupFormProps } from '../types/types';
 
 export default function AddgroupForm({ Close, groupProp, setGroupProp }: AddGroupFormProps) {
 

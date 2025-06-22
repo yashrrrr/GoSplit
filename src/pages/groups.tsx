@@ -11,6 +11,7 @@ export default function Groups() {
     const [showGroup, setShowGroup] = useState<boolean>(false);
     const [showPlus, setShowPlus] = useState<boolean>(true);
     const [showForm, setShowform] = useState<boolean>(false);
+    const [currGrpId, setCurrGrpId] = useState<string>("");
     const [groups, setGroups] = useState<groups[]>(() => {
         if(localStorage.getItem('groups')){
         const stored = localStorage.getItem('groups');
@@ -57,7 +58,10 @@ export default function Groups() {
                         <ul className="groups-list">
                         {groups?.map((group, idx) => (
                             <React.Fragment key={group.g_name + idx}>
-                            <li className="group-item" onClick={() => setShowGroup(true)}>
+                            <li className="group-item" onClick={() => {
+                                    setCurrGrpId(group.g_id);
+                                    setShowGroup(true);
+                                }}>
                                 <p>{group.g_name}</p>
                                 <img
                                     src={cross}
@@ -84,7 +88,7 @@ export default function Groups() {
             )}
 
             {showGroup && (
-                <Group />
+                <Group gid = {currGrpId} />
             )}
         </>
     );
